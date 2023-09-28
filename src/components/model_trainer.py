@@ -43,17 +43,28 @@ class ModelTrainer:
             models = {
                 "Decision Tree": DecisionTreeClassifier(),
                 "XGBClassifier": XGBClassifier(),
-                "KNN": KNeighborsRegressor(),
-
                 }
+
+            params = {
+                "Decision Tree": {
+                    'criterion': ['gini', 'entropy'],
+                    'max_depth': [None, 5, 10, 15, 20, 25, 30],
+                    'min_samples_leaf': [1, 2, 4, 8],
+                },
+                "XGBClassifier": {
+                    'learning_rate': [.1, .01, .05, .001],
+                    'n_estimators': [8, 16, 32, 64, 128, 256]
+                },
+            }
             logging.info('Balance the data using smote')
 
             X_train, y_train = SMOTE(random_state=42).fit_resample(X_train, y_train)
 
             logging.info('Smote balance done')
 
+
             model_report: dict = evaluate_models(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test,
-                                                 models=models)
+                                                 models=models, param=params)
 
             ## To get best model score from dict
             best_model_score = max(sorted(model_report.values()))
