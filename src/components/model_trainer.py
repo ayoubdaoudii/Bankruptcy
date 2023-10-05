@@ -2,16 +2,8 @@ import os
 import sys
 from dataclasses import dataclass
 
-from catboost import CatBoostRegressor
-from sklearn.ensemble import (
-    AdaBoostRegressor,
-    GradientBoostingRegressor,
-    RandomForestRegressor,
-)
-from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 from sklearn.metrics import accuracy_score
-from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBClassifier
 from imblearn.over_sampling import SMOTE
@@ -42,20 +34,9 @@ class ModelTrainer:
             )
             models = {
                 "Decision Tree": DecisionTreeClassifier(),
-                "XGBClassifier": XGBClassifier(),
+                "XGBClassifier": XGBClassifier(n_estimators=4000, learning_rate=0.05, n_jobs=7 ),
                 }
 
-            params = {
-                "Decision Tree": {
-                    'criterion': ['gini', 'entropy'],
-                    'max_depth': [None, 5, 10, 15, 20, 25, 30],
-                    'min_samples_leaf': [1, 2, 4, 8],
-                },
-                "XGBClassifier": {
-                    'learning_rate': [.1, .01, .05, .001],
-                    'n_estimators': [8, 16, 32, 64, 128, 256]
-                },
-            }
             logging.info('Balance the data using smote')
 
             X_train, y_train = SMOTE(random_state=42).fit_resample(X_train, y_train)
@@ -64,7 +45,7 @@ class ModelTrainer:
 
 
             model_report: dict = evaluate_models(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test,
-                                                 models=models, param=params)
+                                                 models=models)
 
             ## To get best model score from dict
             best_model_score = max(sorted(model_report.values()))
