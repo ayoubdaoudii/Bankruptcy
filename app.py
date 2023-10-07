@@ -21,7 +21,7 @@ def index():
 def predict_datapoint():
     from src.pipline.predict_pipline import CustomData, PredictPipeline
     if request.method=='GET':
-        return render_template('predict_section.html')
+        return render_template('predictpage.html')
     else:
         data=CustomData(
             atr1=float(request.form.get('atr1')),
