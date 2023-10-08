@@ -30,53 +30,64 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-</head>
 
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+    <style>
+        .bg-blue-500 {
+            background-color: rgb(19, 64, 116);
+        }
+    </style>
+    </head>
+    
+    <body>
+    
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-blue-500"
+                style="width: 3rem; height: 3rem; .bg-blue-500{color: rgb(19, 64, 116)};" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
-    </div>
-    <!-- Spinner End -->
-
-
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                <a href="index.html" class="navbar-brand">
-                    <h1 class="text-white">AI<span class="text-dark">.</span>Tech</h1>
-                </a>
-                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
-                        <a href="" class="nav-item nav-link active">Home</a>
-                        <a href="" class="nav-item nav-link">About Us</a>
-                        <a href="" class="nav-item nav-link">Our App</a>
-                        <a href="" class="nav-item nav-link">FAQs</a>
-                        <a href="" class="nav-item nav-link">Contact</a>
+        <!-- Spinner End -->
+    
+    
+        <!-- Navbar Start -->
+        <div class="container-fluid sticky-top">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="{{ url_for('static', filename='img/logowhite.png')}}" alt="Logo"
+                            class="w-[6rem] h-1 mr-2 object-cover" style="
+        width: 12rem;
+        margin-top: 1.5rem;">
+    
+                    </a>
+                    <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto">
+                            <a href="#home" class="nav-item nav-link active">Home</a>
+                            <a href="#about" class="nav-item nav-link">About Us</a>
+                            <a href="#app" class="nav-item nav-link">Our App</a>
+                            <a href="#faq" class="nav-item nav-link">FAQs</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
+                            data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
                     </div>
-                    <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
-                        data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-                </div>
-            </nav>
+                </nav>
+            </div>
         </div>
-    </div>
-    <!-- Navbar End -->
+        <!-- Navbar End -->
 
 
      <!-- Hero Start -->
-    <div class="container-fluid pt-5 bg-primary hero-header mb-5">
+    <div class="container-fluid pt-5 bg-blue-500 hero-header mb-5">
         <div class="container pt-5">
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
-                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">AI.Tech</div>
                     <h1 class="display-4 text-white mb-4 animated slideInRight">Your company is <span style="color: rgb(237, 99, 99);"> At Risk</span> of going Bankruptcy</h1>
                     <h5 class="text-white mb-4 animated slideInRight">These instructions can help you reconsider your financial health and ensure the safety of your business:</h5>
 
@@ -86,7 +97,7 @@
                     <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">4. Consider selling non-core assets to generate cash and repay debts</p>
                     <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">5. Explore options for refinancing or consolidating high-interest loans</p>
 
-                    <a href="predict_section.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Get Started</a>
+                    <a href="predictpage.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Try Again/a>
                     <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
@@ -117,38 +128,15 @@
     </div>
     <!-- Full Screen Search End -->
 
-
-    <!-- Newsletter Start -->
-    <div class="container-fluid bg-primary newsletter py-5">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
-                    <img class="img-fluid" src="{{ url_for('static', filename='img/newsletter.png')}}" alt="">
-                </div>
-                <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
-                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Newsletter</div>
-                    <h1 class="text-white mb-4">Let's subscribe the newsletter</h1>
-                    <div class="position-relative w-100 mt-3 mb-2">
-                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
-                            placeholder="Enter Your Email" style="height: 48px;">
-                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
-                                class="fa fa-paper-plane text-primary fs-4"></i></button>
-                    </div>
-                    <small class="text-white-50">Diam sed sed dolor stet amet eirmod</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Newsletter End -->
-
-
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+    <div class="container-fluid bg-blue-500 text-white-50 footer pt-5">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                     <a href="index.html" class="d-inline-block mb-3">
-                        <h1 class="text-white">AI<span class="text-primary">.</span>Tech</h1>
+                    <img src="{{ url_for('static', filename='img/logowhite.png')}}" alt="Logo" class="w-[6rem] h-1 mr-2 object-cover" style="
+                        width: 15rem;
+                        margin-top: -3rem;">
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
@@ -156,12 +144,6 @@
                     <p><i class="fa fa-map-marker-alt me-3"></i>Grand Casablanca, Morocco</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+212649-673365</p>
                     <p><i class="fa fa-envelope me-3"></i>ayoubdaoudi2001@gmail.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/AyoubDa11323718" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ayoubdaoudi20/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/ayoub-daoudi-7735a9228/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <h5 class="text-white mb-4">Popular Link</h5>
                     <a class="btn btn-link" href="">About Us</a>
@@ -185,7 +167,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="#">Bankruptcy Predictor</a>, All Right Reserved.
                     </div>
                 </div>
             </div>

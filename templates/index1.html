@@ -31,13 +31,20 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <style>
+    .bg-blue-500 {
+    background-color: rgb(19, 64, 116);
+  }
+    </style>
 </head>
 
 <body>
+
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <div class="spinner-grow text-blue-500" style="width: 3rem; height: 3rem; .bg-blue-500{color: rgb(19, 64, 116)};" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
@@ -46,9 +53,9 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top" >
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                <a href="index.html" class="navbar-brand">
+        <div class="container" >
+            <nav class="navbar navbar-expand-lg navbar-dark p-0" >
+                <a href="index1.html" class="navbar-brand">
                      <img src="{{ url_for('static', filename='img/logowhite.png')}}" alt="Logo" class="w-[6rem] h-1 mr-2 object-cover" style="
     width: 12rem;
     margin-top: 1.5rem;">
@@ -66,8 +73,6 @@
                         <a href="#faq" class="nav-item nav-link">FAQs</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
-                        data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
                 </div>
             </nav>
         </div>
@@ -76,15 +81,14 @@
 
 
     <!-- Hero Start -->
-    <div class="container-fluid pt-5 bg-primary hero-header mb-5">
+    <div class="container-fluid pt-5 bg-blue-500 hero-header mb-5">
         <div class="container pt-5">
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
-                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">AI.Tech</div>
                     <h1 class="display-4 text-white mb-4 animated slideInRight">Avoid Bankruptcy for Your Success</h1>
                     <p class="text-white mb-4 animated slideInRight">Careful financial planning and prudent management can help companies steer clear of the financial pitfalls that lead to
                     bankruptcy, ensuring long-term sustainability and success.</p>
-                    <a href="predict_section.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Get Started</a>
+                    <a href="predictpage.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Get Started</a>
                     <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
@@ -146,7 +150,7 @@
 
 
     <!-- Our App -->
-    <div id="app" class="container-fluid bg-primary feature pt-5">
+    <div id="app" class="container-fluid bg-blue-500 feature pt-5">
         <div class="container pt-5">
             <div class="row g-5">
                 <div class="col-lg-6 align-self-center mb-md-5 pb-md-5 wow fadeIn" data-wow-delay="0.3s">
@@ -201,12 +205,12 @@
                     <div class="accordion" id="accordionFAQ1">
                         <div class="accordion-item wow fadeIn" data-wow-delay="0.1s">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                <button class="accordion-button collapsed"  type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     Should I sign up to use the App ?
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="accordion-collapse collapse"  aria-labelledby="headingOne"
                                 data-bs-parent="#accordionFAQ1">
                                 <div class="accordion-body">
                                     NO. the Application is functionning without creating account or signing in the web site 
@@ -331,11 +335,11 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+    <div class="container-fluid bg-blue-500 text-white-50 footer pt-5">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <a href="index.html" class="d-inline-block mb-3">
+                    <a href="index1.html" class="d-inline-block mb-3">
                          <img src="{{ url_for('static', filename='img/logowhite.png')}}" alt="Logo" class="w-[6rem] h-1 mr-2 object-cover" style="
     width: 15rem;
     margin-top: -3rem;">
