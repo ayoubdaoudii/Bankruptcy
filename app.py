@@ -18,10 +18,10 @@ def index():
     return render_template('index.html')
 
 @app.route('/predictdata',methods=['GET','POST'])
-def predict_datapoint():
+def predictdata():
     from src.pipline.predict_pipline import CustomData, PredictPipeline
     if request.method=='GET':
-        return render_template('predictpage.html')
+        return render_template('predictdata.html')
     else:
         data=CustomData(
             atr1=float(request.form.get('atr1')),
@@ -55,4 +55,4 @@ def predict_datapoint():
             return render_template('predictFalse.html')
 
 if __name__=="__main__":
-    app.run()
+    app.run(host="0.0.0.0", debug=True)
