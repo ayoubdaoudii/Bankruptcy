@@ -55,7 +55,7 @@
         <div class="container-fluid sticky-top">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="{{ url_for('index') }}" class="navbar-brand">
                         <img src="{{ url_for('static', filename='img/logowhite.png')}}" alt="Logo"
                             class="w-[6rem] h-1 mr-2 object-cover" style="
         width: 12rem;
@@ -68,14 +68,13 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav ms-auto">
-                            <a href="#home" class="nav-item nav-link active">Home</a>
-                            <a href="#about" class="nav-item nav-link">About Us</a>
-                            <a href="#app" class="nav-item nav-link">Our App</a>
-                            <a href="#faq" class="nav-item nav-link">FAQs</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{{ url_for('index') }}" class="nav-item nav-link active">Home</a>
+                            <a href="{{ url_for('index') }}" class="nav-item nav-link">About Us</a>
+                            <a href="{{ url_for('index') }}" class="nav-item nav-link">Our App</a>
+                            <a href="{{ url_for('index') }}" class="nav-item nav-link">FAQs</a>
+                            <a href=https://www.linkedin.com/in/ayoub-daoudi-7735a9228/"
+                            target="_blank" class="nav-item nav-link">Contact</a>
                         </div>
-                        <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
-                            data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
                     </div>
                 </nav>
             </div>
@@ -97,8 +96,9 @@
                     <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">4. Consider selling non-core assets to generate cash and repay debts</p>
                     <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">5. Explore options for refinancing or consolidating high-interest loans</p>
 
-                    <a href="predictpage.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Try Again/a>
-                    <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                    <a href="{{ url_for('predictdata') }}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Try Again/a>
+                    <a href="https://www.linkedin.com/in/ayoub-daoudi-7735a9228/"
+                            target="_blank" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
                     <img class="img-fluid" src="{{ url_for('static', filename='img/predictTrue.png')}}" alt="">
@@ -133,7 +133,7 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <a href="index.html" class="d-inline-block mb-3">
+                    <a href="{{ url_for('index') }}" class="d-inline-block mb-3">
                     <img src="{{ url_for('static', filename='img/logowhite.png')}}" alt="Logo" class="w-[6rem] h-1 mr-2 object-cover" style="
                         width: 15rem;
                         margin-top: -3rem;">
@@ -146,8 +146,8 @@
                     <p><i class="fa fa-envelope me-3"></i>ayoubdaoudi2001@gmail.com</p>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <h5 class="text-white mb-4">Popular Link</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="{{ url_for('index') }}">About Us</a>
+                    <a class="btn btn-link" href="{{ url_for('index') }}">Contact Us</a>
                 </div>
 
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
@@ -167,7 +167,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Bankruptcy Predictor</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="{{ url_for('index') }}">Bankruptcy Predictor</a>, All Right Reserved.
                     </div>
                 </div>
             </div>
