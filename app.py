@@ -13,7 +13,7 @@ app=application
 
 ## Route for a home page
 
-@app.route('/', methodS=['GET'])
+@app.route('/')
 def index():
     return render_template('index.html')
 
@@ -55,4 +55,4 @@ def predictdata():
             return render_template('predictFalse.html')
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
